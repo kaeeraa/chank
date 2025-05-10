@@ -13,6 +13,8 @@ endif()
 
 include_directories(src)
 
+find_package(Qt6 REQUIRED COMPONENTS Core)
+
 add_executable(main src/main.cpp)
 
 install(TARGETS main DESTINATION .)
