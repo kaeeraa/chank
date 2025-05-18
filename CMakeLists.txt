@@ -13,10 +13,17 @@ endif()
 
 include_directories(src)
 
+set(CMAKE_AUTOMOC ON)
+set(CMAKE_AUTORCC ON)
+set(CMAKE_AUTOUIC ON)
+
 find_package(Qt6 REQUIRED COMPONENTS Core Widgets Gui)
 
-
-add_executable(main src/main.cpp)
+add_executable(main
+    src/main.cpp
+    src/app/ChatBox.h
+    src/app/ChatBox.cpp
+)
 
 target_link_libraries(main PRIVATE Qt6::Core Qt6::Gui Qt6::Widgets)
 
