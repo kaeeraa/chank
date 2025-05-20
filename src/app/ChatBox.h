@@ -12,6 +12,7 @@ class ChatBox : public QWidget {
 
 public:
   explicit ChatBox(QWidget *parent = nullptr);
+  ~ChatBox() override;
 
 private:
   QVBoxLayout *layout = nullptr;

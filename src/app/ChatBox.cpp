@@ -22,6 +22,8 @@ ChatBox::ChatBox(QWidget *parent) : QWidget(parent) {
   layout->addWidget(newChatButton);
 }
 
+ChatBox::~ChatBox() { delete layout; }
+
 void ChatBox::newChat(QString name) {
   if (chats.size() >= 10) {
     return;
