@@ -25,6 +25,11 @@
               pkgs.kdePackages.qtbase
               pkgs.clang-tools
               pkgs.clang
+              pkgs.apr
+              pkgs.aprutil
+              pkgs.mysql80
+              pkgs.postgresql
+              pkgs.apacheHttpd
             ];
             shellHook = ''
               mkdir -p build
