@@ -1,11 +1,11 @@
 #ifndef CHATBOX_H
 #define CHATBOX_H
 
+#include "app/ChatManager.h"
+
+#include <QtWidgets/QPushButton>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
-#include <QtWidgets/QPushButton>
-
-#include <vector>
 
 class ChatBox : public QWidget {
   Q_OBJECT
@@ -14,12 +14,12 @@ public:
   explicit ChatBox(QWidget *parent = nullptr);
   ~ChatBox() override;
 
-private:
-  QVBoxLayout *layout = nullptr;
-  std::vector<QPushButton *> chats;
+  // Setters
+  void newChat(const id_t &id, const User &user1, const User &user2);
 
-public slots:
-  void newChat(QString name);
+private:
+  ChatManager chatManager;
+  QVBoxLayout *layout = nullptr;
 };
 
 #endif // !CHATBOX_H
